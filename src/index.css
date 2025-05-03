@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url("../public/fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url("../public/fonts/Be_Vietnam_Pro/BeVietnamPro-Medium.ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url("../public/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+  --font-family: "BeVietnamPro";
+  --bright-red: hsl(12, 88%, 59%);
+  --dark-blue: hsl(233, 12%, 13%);
+  --very-dark-Blue: hsl(233, 12%, 13%);
+  --very-pale-Red: hsl(13, 100%, 96%);
+  --very-light-gary: hsl(0, 0%, 98%);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family);
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[450px] md:max-w-[990px] w-11/12 mx-auto;
+  }
+  .bg-overlay {
+    @apply fixed left-0 top-0 w-screen h-screen;
+    background-image: linear-gradient(
+      0deg,
+      rgba(51, 51, 51, 0.3) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+  }
+  .btn {
+    --text-clr: #333;
+    --bg-clr: transparent;
+    --shadow: none;
+    color: var(--text-clr);
+    background-color: var(--bg-clr);
+    box-shadow: var(--shadow);
+    @apply py-3 px-6 rounded-2xl transition-all duration-300;
+  }
+
+  .btn--white {
+    --text-clr: var(--bright-red);
+    --bg-clr: white;
+  }
+
+  .btn--orange {
+    --text-clr: white;
+    --bg-clr: var(--bright-red);
+  }
+
+  .btn--white.btn--shadow {
+    --shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn--orange.btn--shadow {
+    --shadow: 0 4px 7px var(--bright-red);
+  }
+
+  .btn:hover {
+    opacity: 0.6;
+  }
+
+  .hero-section-bg {
+    @apply absolute -top-[10%] -right-[10%] md:top-[27%] md:right-0 -translate-y-[25%] md:-translate-y-[70%] z-0 w-[500px];
+  }
+}
+
+@layer utilities {
+  .swiper-pagination-bullet {
+    @apply border-2 border-solid border-bright-red bg-transparent;
+  }
+  .swiper-pagination-bullet-active {
+    @apply bg-bright-red;
+  }
+}
