@@ -1,4 +1,4 @@
-export default function SimplifySeciton() {
+export default function SimplifySection() {
   return (
     <section
       id="simplify"

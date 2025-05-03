@@ -1,7 +1,7 @@
 import HeroSection from "../components/sections/HeroSection";
 import AboutSection from "../components/sections/AboutSection";
 import TestimonialSection from "../components/sections/TestimonialSection";
-import SimplifySeciton from "../components/sections/simplifySection";
+import SimplifySection from "../components/sections/Simplify";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <TestimonialSection />
-      <SimplifySeciton />
+      <SimplifySection />
     </>
   );
 }
